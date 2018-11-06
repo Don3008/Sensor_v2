@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${messages} and ${messages.size()}">no message :(</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Coordinates</th>
+        <th>Temperature</th>
+    </tr>
+
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.coordinates}"></td>
+        <td th:text="${message.temperature}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
+
