@@ -14,12 +14,14 @@
 <table class="table">
 
     <tr>
-        <th>Coordinates</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
         <th>Temperature</th>
     </tr>
 
     <tr th:each="message : ${messages}">
-        <td th:text="${message.coordinates}"></td>
+        <td th:text="${message.latitude}"></td>
+        <td th:text="${message.longitude}"></td>
         <td th:text="${message.temperature}"></td>
     </tr>
 

@@ -12,7 +12,8 @@
 
     <div th:each="message : ${messages}" class="checkbox">
         <input type="checkbox" name="messageIds" th:value="${message.id}" th:id="${message.id}"/>
-        <label th:for="${message.id}" th:text="${message.coordinates}"></label>
+        <label th:for="${message.id}" th:text="${message.latitude}"></label>
+        <label th:for="${message.id}" th:text="${message.longitude}"></label>
         <label th:for="${message.id}" th:text="${message.temperature}"></label>
         <br />
     </div>

@@ -2,8 +2,6 @@ package siemens.sensor.domain;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 
 @Entity
 @Table(name = "message")
@@ -13,18 +11,18 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "coordinates")
-    @Min(value = -180, message = "Значение координато должно находиться в диапозоне от -180 до 180 градусов")
-    @Max(value = 180, message = "Значение координато должно находиться в диапозоне от -180 до 180 градусов")
-    private int coordinates;
+    @Column(name = "latitude")
+    private double latitude;
+
+    @Column(name = "longitude")
+    private double longitude;
 
     @Column(name = "temperature")
-    @Min(value = -100, message = "Значение температуры должно находиться в диапозоне от -100 до +100  градусов Цельсия")
-    @Max(value = 100, message = "Значение температуры должно находиться в диапозоне от -100 до +100 градусов Цельсия")
-    private int temperature;
+    private double temperature;
 
-    public Message(int coordinates, int temperature) {
-        this.coordinates = coordinates;
+    public Message(double latitude, double longitude, double temperature) {
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.temperature = temperature;
     }
 
@@ -35,22 +33,31 @@ public class Message {
         return id;
     }
 
-    public int getCoordinates() {
-        return coordinates;
+    public double getLatitude() {
+        return latitude;
     }
 
-    public void setCoordinates(int coordinates) {
-        this.coordinates = coordinates;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
-    public int getTemperature() {
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 }
+
 
 
 

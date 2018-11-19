@@ -2,9 +2,16 @@ package siemens.sensor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class SensorApplication {
+public class SensorApplication extends SpringBootServletInitializer {
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(SensorApplication.class);
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SensorApplication.class, args);

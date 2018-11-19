@@ -9,9 +9,14 @@
 
 <form method="post" style="max-width:600px;" th:object="${message}">
     <div class="form-group">
-        <label th:for="coordinates">Coordinates</label>
-        <input class="form-control" th:field="*{coordinates}"/>
-        <span th:errors="*{coordinates}" class="error"></span>
+        <label th:for="latitude">Latitude</label>
+        <input class="form-control" th:field="*{latitude}"/>
+        <span th:errors="*{latitude}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="longitude">Longitude</label>
+        <input class="form-control" th:field="*{longitude}"/>
+        <span th:errors="*{longitude}" class="error"></span>
     </div>
     <div class="form-group">
         <label th:for="temperature">Temperature</label>

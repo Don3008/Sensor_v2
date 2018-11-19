@@ -5,3 +5,9 @@ body {
 nav {
     margin-bottom: 20px;
 }
+span.error {
+    color: red;
+}
+form div{
+    margin: 5px;
+}
